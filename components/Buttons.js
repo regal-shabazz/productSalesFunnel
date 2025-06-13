@@ -1,5 +1,5 @@
-export const OrderNowButton = () => {
+export const OrderNowButton = (href) => {
     return `
-        <button>Order Now! <br/> Payment on Delivery</button>
+        <a href="${href}">Order Now! <br/> Payment on Delivery</a>
     `
 }

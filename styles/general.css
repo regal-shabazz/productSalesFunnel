@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  font-family: sans-serif;
+  color: whitesmoke;
+}
+
+.container {
+  width: 90%;
+  max-width: 1024px;
+  margin-inline: auto;
+  padding-block: 5rem;
+  background-color: black;
+}
+
+body {
+  background-color: black;
+}
+
+.cta-btn a {
+  padding: 20px 30px;
+  color: black;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background-color: orange;
+  transition: ease 0.15s;
+  display: inline-block;
+}
+
+.cta-btn button:hover,
+.slider-btn:hover {
+  background-color: rgb(245, 199, 114);
+}
+
+img {
+  width: 80%;
+  margin-inline: auto;
+  border-radius: 10px;
+}
+
+.slider-btn {
+  color: black;
+  padding: 10px 10px;
+  background-color: orange;
+  border: none;
+  cursor: pointer;
+}
