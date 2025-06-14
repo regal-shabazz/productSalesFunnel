@@ -1,4 +1,5 @@
 import { Homepage } from "./pages/homepage.js";
+import { ThankYouPage } from "./pages/thank-you-page.js";
 
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
@@ -46,8 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     )
       .then(() => {
-        alert("Order submitted successfully!");
         form.reset();
+        root.innerHTML = ThankYouPage()
+        
+
+        const backToHomepage = document.getElementById('back-to-homepage')
+
+        backToHomepage.addEventListener('click', () => {
+          root.innerHTML = Homepage()
+        })
       })
       .catch((err) => {
         alert("Error submitting order.");
