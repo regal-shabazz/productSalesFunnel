@@ -20,6 +20,12 @@ const renderRoute = () => {
     const lastName = sessionStorage.getItem("orderLastName") || "";
     root.innerHTML = ThankYouPage({ firstName, lastName });
 
+      // ✅ Fire Purchase event
+  fbq('track', 'Purchase', {
+    value: 35000, // replace with actual price
+    currency: 'NGN'
+  });
+
     const backToHomepage = document.getElementById("back-to-homepage");
     if (backToHomepage) {
       backToHomepage.addEventListener("click", () => {
