@@ -1,5 +1,5 @@
-export const OrderNowButton = (href) => {
-    return `
-        <a href="${href}">Order Now! <br/> Payment on Delivery</a>
-    `
-}
+export const OrderNowButton = (targetId) => {
+  return `
+    <a href="${targetId}" class="scroll-to-form">Order Now! <br/> Payment on Delivery</a>
+  `;
+};
