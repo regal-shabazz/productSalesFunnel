@@ -189,6 +189,7 @@ form input {
   color: whitesmoke;
   padding: 10px 15px;
   border: none;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 600px) {

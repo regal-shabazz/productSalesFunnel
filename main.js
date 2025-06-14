@@ -1,37 +1,57 @@
 import { Homepage } from "./pages/homepage.js";
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById("root");
-
-
   let indexCount = 0;
-
   const imageList = ["2.png", "3.png", "4.png"];
 
-  root.innerHTML = Homepage()
+  root.innerHTML = Homepage();
 
   const sliderLeft = document.getElementById("slider-left");
   const sliderRight = document.getElementById("slider-right");
   const sliderImage = document.getElementById("slider-img");
 
   sliderLeft.addEventListener("click", () => {
-    indexCount--;
-
-    if (indexCount < 0) {
-      indexCount = imageList.length - 1
-    }
-
-    sliderImage.src = `./assets/images/D21 Smart Watch ${imageList[indexCount]}`
+    indexCount = (indexCount - 1 + imageList.length) % imageList.length;
+    sliderImage.src = `./assets/images/D21 Smart Watch ${imageList[indexCount]}`;
   });
 
   sliderRight.addEventListener("click", () => {
-    indexCount++;
+    indexCount = (indexCount + 1) % imageList.length;
+    sliderImage.src = `./assets/images/D21 Smart Watch ${imageList[indexCount]}`;
+  });
 
-    if (indexCount >= imageList.length ) {
-      indexCount = 0
-    }
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
 
-    sliderImage.src = `./assets/images/D21 Smart Watch ${imageList[indexCount]}`
+    const formData = {
+      firstName: form.querySelector("#first-name").value,
+      lastName: form.querySelector("#last-name").value,
+      phoneNumber: form.querySelector("#phone-number").value,
+      whatsappNumber: form.querySelector("#whatsapp-number").value,
+      streetAddress: form.querySelector("#street-address").value,
+      city: form.querySelector("#city").value,
+      state: form.querySelector("#state").value,
+    };
+
+    fetch(
+      "https://script.google.com/macros/s/AKfycbwtNxYO9JXDQIV9_FFqWlxtIStkuyiUmX-cyDPr6Km9dUpNQVaRovhQPP0iOMZ26ZS8/exec",
+      {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      }
+    )
+      .then(() => {
+        alert("Order submitted successfully!");
+        form.reset();
+      })
+      .catch((err) => {
+        alert("Error submitting order.");
+        console.error(err);
+      });
   });
 });

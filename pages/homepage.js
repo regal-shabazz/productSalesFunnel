@@ -89,19 +89,19 @@ export const Homepage = () => {
                         <p>Fill The Form Below To Complete Your Order</p>
                     </div>
                     <form id="form">
-                        <label for="first-name">First Name</label> 
+                        <label for="first-name">First Name *</label> 
                         <input type="text" id="first-name" placeholder="First Name" required/>
-                        <label for="last-name">Last Name</label> 
+                        <label for="last-name">Last Name *</label> 
                         <input type="text" id="last-name" placeholder="Last Name" required/>
-                        <label for="phone">Phone Number</label> 
-                        <input type="text" id="phone-number" placeholder="+234-xxx-xxx-xxxx" required/>
-                        <label for="whatsapp-number">Whatsapp Number</label> 
-                        <input type="text" id="whatsapp-number" placeholder="+234-xxx-xxx-xxxx" required/>
+                        <label for="phone">Phone Number *</label> 
+                        <input type="text" id="phone-number" placeholder="Phone Number" required/>
+                        <label for="whatsapp-number">Whatsapp Number *</label> 
+                        <input type="text" id="whatsapp-number" placeholder="WhatsApp Number" required/>
                         <label for="street-address">Street Address *</label> 
                         <input type="text" id="street-address" placeholder="Street Adress" required/>
                         <label for="city">City *</label> 
                         <input type="text" id="city" placeholder="City" required/>
-                        <label for="state">State</label> 
+                        <label for="state">State *</label> 
                         <input type="text" id="state" placeholder="State" required/>
 
                         <div class="product-price-disclaimer">
